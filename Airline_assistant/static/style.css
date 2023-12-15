@@ -1,0 +1,132 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Trirong', sans-serif ;
+    background-color: #1a1a7a;
+  }
+  
+  header {
+    background-color: #1a1a7a; /* Adjust color to match design */
+    color: white;
+    padding: 1em;
+  }
+  
+  nav {
+    display: flex;
+    background-color: antiquewhite;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color:#1a1a7a;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .cart img {
+    width: 30px; /* Adjust size as necessary */
+  }
+  
+  .hero {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .rules {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+  }
+
+  .algos {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+  }
+  
+  .check-box {
+      width: 40vw;
+    
+  }
+
+  .input-data {
+    background-color: #1a1a7a; /* Adjust color to match design */
+    padding: 2em;
+    color: white;
+    text-align: center;
+  }
+  
+  .input-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .input-box {
+    border: 1px solid white;
+    background-color: white;
+    padding: 2em;
+    margin: 1em;
+    width: calc(33.333% - 2em); /* Adjust width for spacing */
+  }
+  
+  .input-box span {
+    display: block;
+    color: #1a1a7a;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  
+  button {
+    padding: 0.5em 1em;
+    background-color:#1a1a7a;
+    border-radius: 0.3rem;
+    color:white;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color:#1a1a7ada;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .input-box {
+      width: calc(50% - 2em); /* Adjust width for spacing */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-links,
+    .cart {
+      flex-direction: column;
+    }
+  
+    .nav-links a {
+      margin-bottom: 10px;
+    }
+  
+    .input-container {
+      flex-direction: column;
+    }
+  
+    .input-box {
+      width: 100%;
+      margin: 1em 0;
+    }
+  }
+  

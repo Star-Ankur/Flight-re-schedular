@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Re-scheduler</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#apply">Apply Now</a>
+          <a href="#book">Book Online</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>INPUT DATA</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      </section>
+      <section class="input-data">
+        <form action="/submit" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="input-container">
+            <div class="input-box">
+              <span>Input 1</span>
+              <div class="button">
+                <input type="file" style="display: none;" name="input1" id="input1" />
+                <button type="button" onclick="document.getElementById('input1').click()" id="file1-button">Choose file</button>
+              </div>
+            </div>
+            <div class="input-box">
+              <span>Input 2</span>
+              <div class="button">
+                <input type="file" style="display: none;" name="input2" id="input2" />
+                <button type="button" onclick="document.getElementById('input2').click()" id="file2-button">Choose file</button>
+              </div>
+            </div>
+            <div class="input-box">
+              <span>Input 3</span>
+              <div class="button">
+                <input type="file" style="display: none;" name="input3" id="input3" />
+                <button type="button" onclick="document.getElementById('input3').click()" id="file3-button">Choose file</button>
+              </div>
+            </div>
+          </div>
+          <div class="rules-eng">
+            <h1>RULES ENGINE</h1>
+            <div class="rules">
+                <div class="rule-col1">
+                    <div class="custom-control custom-checkbox check-box">
+                        <input type="checkbox" class="custom-control-input" name="check1" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">Checkbox 1</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="check2" id="customCheck2">
+                        <label class="custom-control-label" for="customCheck2">Checkbox 2</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="check3" id="customCheck3">
+                        <label class="custom-control-label" for="customCheck3">Checkbox 3</label>
+                    </div>
+                </div>
+                <div class="rule-col2">
+                    <div class="custom-control custom-checkbox check-box">
+                        <input type="checkbox" class="custom-control-input" name="check4" id="customCheck4">
+                        <label class="custom-control-label" for="customCheck4">Checkbox 1</label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="check5" id="customCheck5">
+                        <label class="custom-control-label" for="customCheck5">Checkbox 2</label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="check6" id="customCheck6">
+                        <label class="custom-control-label" for="customCheck6">Checkbox 3</label>
+                      </div>
+                </div>
+              </div>
+            </div>
+          <div class="algos-eng">
+            <h1>ALGORITHMS</h1>
+            <div class="algos">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="inputGroupSelect01">Select Algo 1</label>
+                    </div>
+                    <select class="custom-select" name="option1" id="inputGroupSelect01">
+                      <option selected>Choose...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="inputGroupSelect01">Select Algo 2</label>
+                    </div>
+                    <select class="custom-select" name="option2" id="inputGroupSelect01">
+                      <option selected>Choose...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+          </div>
+          <button type="submit" value="submit" class="btn btn-primary btn-lg">Generate</button>
+        </form>
+        <!-- Test Form -->
+        <!-- <form action="/generate" method="POST" id="test-form" enctype="multipart/form-data" >
+          {% csrf_token %}
+          <select class="custom-select" name="option" id="inputSelect01">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <div class="button">
+            <input type="file" name="input1" value="" id="file1"/>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="checkbox" id="customCheck7">
+            <label class="custom-control-label" for="customCheck7">Checkbox 3</label>
+          </div>
+          <input type="submit" class="btn" value="Click" name="mybtn">
+        </form> -->
+      </section>
+    </main>
+    <!-- <script>
+      document.getElementById("test-form").addEventListener("submit", (e)=>{
+        e.preventDefault();
+        const file = document.getElementById("file1").files[0];
+        const formData = new FormData();
+        formData.append('file', file);
+        console.log(file.value);
+        fetch("/generate", {method:'POST', body: formData})
+        .then(res => {
+          console.log(res)
+        })
+        .catch(error =>{
+          console.log(error)
+        })
+      })
+    </script> -->
+    <script src="/static/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
